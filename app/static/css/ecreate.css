@@ -1,0 +1,165 @@
+/* Stile per il contenitore del titolo */
+.container.e-c-title {
+    padding: 40px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #df7c35, #b4555d); /* Gradienti dinamici */
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+/* Titolo principale */
+.e-c-first {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(90deg, #ce8653, #992945, #fdbb2d);
+    background-clip: text;
+    -webkit-background-clip: text; /* Supporto per i browser che non supportano il background-clip */
+    color: transparent;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Leggera ombra per far risaltare il testo */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.e-c-first:hover {
+    transform: scale(1.05);
+    color: #f7f7f7; /* Cambia il colore quando hover */
+}
+
+/* Aggiungi effetto di animazione al titolo */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.e-c-first {
+    animation: bounce 1s ease-in-out;
+}
+/* Stile per il contenitore del form */
+.container.form {
+    background: linear-gradient(45deg, #ff6a00, #ff3e4d); /* Gradiente di sfondo accattivante */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: auto;
+    transform: translateY(20px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container.form:hover {
+    transform: translateY(0);
+}
+
+/* Form title */
+.e-form h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff7a18, #af002d, #fdbb2d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+/* Stile per i gruppi di input */
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    display: block;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+input.form-control, textarea.form-control {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #fff;
+    border-radius: 8px;
+    color: #fff;
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+input.form-control:focus, textarea.form-control:focus {
+    border-color: #ff7a18;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+input.form-control::placeholder, textarea.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Testo aggiuntivo sotto gli input */
+.form-text {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+/* Pulsante di submit */
+.btn-primary {
+    background: linear-gradient(90deg, #ff7a18, #af002d, #fdbb2d);
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #fdbb2d, #af002d, #ff7a18);
+    transform: scale(1.05);
+}
+
+/* Effetto hover sui pulsanti */
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container.form {
+        padding: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .e-form h1 {
+        font-size: 2rem;
+    }
+}

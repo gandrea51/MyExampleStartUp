@@ -1,0 +1,101 @@
+/* Stili per la pagina di registrazione */
+.signup {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradiente arancio-rosa */
+    color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+}
+
+.signup h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.signup p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background-color: #f7f7f7;
+}
+
+.form-group input:focus {
+    border-color: #ff7e5f;
+    outline: none;
+}
+
+.btn-submit {
+    background-color: #0e9b49;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #17887f;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.login-link a:hover {
+    color: #ff7e5f;
+}
+
+@media (max-width: 768px) {
+    .signup {
+        padding: 30px;
+    }
+
+    .signup h1 {
+        font-size: 2rem;
+    }
+
+    .form-group input {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .btn-submit {
+        font-size: 1.1rem;
+    }
+}

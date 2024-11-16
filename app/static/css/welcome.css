@@ -1,0 +1,503 @@
+/* Stile generale */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #ffe9dc;
+}
+
+.nav-link{
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s, transform 0.2s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #ffe9dc;
+    transform: scale(1.1);
+}
+
+.nav-link i{
+    margin-right: 8px;
+    color: #ffe9dc;
+}
+
+/* Pulsante di Toggler */
+.navbar-toggler {
+    background-color: #ffe9dc;
+    border-radius: 5px;
+    padding: 0.3rem 0.6rem;
+}
+
+.navbar-toggler i {
+    color: #ff7e5f;
+}
+
+/* Sezione di Introduzione */
+.other-intro {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/images/restaurant.jpg') center/cover no-repeat;
+    padding: 100px 20px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.intro-content {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffe9dc;
+    text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1.2s ease-out;
+}
+
+.sub-title {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-top: 15px;
+    animation: fadeInUp 1.4s ease-out;
+}
+
+.sub-sub {
+    font-size: 1.2rem;
+    color: #ffe9dc;
+    margin-top: 10px;
+    font-style: italic;
+    animation: fadeInUp 1.6s ease-out;
+}
+
+/* Animazioni */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Effetti Hover sugli Elementi della Sezione */
+.intro-content .title:hover,
+.intro-content .sub-title:hover,
+.intro-content .sub-sub:hover {
+    color: #fff;
+    text-shadow: 2px 4px 8px rgba(255, 126, 95, 0.8);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+
+/* Stile generale per le sezioni */
+.containers {
+    position: relative;
+    padding: 60px 20px;
+    color: #fff;
+    border-radius: 15px;
+    margin: 30px auto;
+    max-width: 800px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+/* Immagine di sfondo */
+.containers .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    filter: blur(6px);
+    transition: opacity 0.5s;
+    z-index: -1;
+}
+
+/* Specifiche per ogni sezione */
+.about {
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+}
+
+.about .background-img {
+    background-image: url('/static/images/rest.jpg'); /* Cambia l'immagine con quella desiderata */
+}
+
+.features {
+    background: linear-gradient(135deg, #56ab2f, #a8e063);
+}
+
+.features .background-img {
+    background-image: url('/static/images/rests.jpg'); /* Cambia l'immagine con quella desiderata */
+}
+
+/* Stile per il titolo */
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Stile per il paragrafo */
+p, .feature, .item {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #fff;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* Lista delle caratteristiche */
+.feature {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature .item{
+    padding: 10px 0;
+    position: relative;
+    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature .item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Icone con before (opzionale per ul li) */
+.feature .item:before {
+    content: "✔️";
+    margin-right: 10px;
+    color: #ffe9dc;
+}
+
+/* Effetti Hover per la sezione */
+.containers:hover .background-img {
+    opacity: 0.5;
+    filter: blur(4px);
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+    
+    p, .feature .item {
+        font-size: 1rem;
+    }
+}
+
+body {
+    /* Impostazione di un gradiente come sfondo */
+    background: linear-gradient(45deg, #ff7e5f, #feb47b, #56ab2f, #a8e063);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
+    
+    /* Aggiungere un filtro di luminosità e sfumatura leggera per migliorare la leggibilità */
+    filter: brightness(1.1) saturate(1.2);
+    
+    /* Impostazione dei font generali */
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+    
+    /* Margin e padding a zero per una gestione migliore degli spazi */
+    margin: 0;
+    padding: 0;
+    
+
+    /* Ombra leggera su tutto il corpo per profondità */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    
+}
+
+/* Animazione per il gradiente di sfondo */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Effetto hover sui link globali */
+a {
+    text-decoration: none;
+    color: #ffe9dc;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffe9dc;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+a:hover {
+    color: #ff7e5f;
+    transform: scale(1.1);
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Styling del Footer */
+.page-footer {
+    background: linear-gradient(45deg, #8e2de2, #4a00e0); /* Aggiungi un gradiente accattivante */
+    padding: 40px 20px;
+    color: #fff;
+    text-align: left;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+}
+
+/* Styling delle colonne del footer */
+.page-footer .col {
+    margin-bottom: 20px;
+}
+
+.page-footer h5 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+/* Testo sotto i titoli */
+.page-footer p, .foot-link li a {
+    font-size: 1rem;
+    color: #dcdcdc;
+    line-height: 1.6;
+}
+
+/* Link della lista */
+.foot-link {
+    list-style-type: none;
+    padding: 0;
+}
+
+.foot-item {
+    margin-bottom: 10px;
+}
+
+.foot-item a {
+    color: #dcdcdc;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.1rem;
+}
+
+/* Effetto Hover sui link */
+.foot-item a:hover {
+    color: #ffe9dc;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+/* Stilizzazione dei copyright e link secondari */
+.footer-copyright {
+    text-align: center;
+    font-size: 1rem;
+    padding-top: 10px;
+    border-top: 1px solid #fff;
+    margin-top: 20px;
+}
+
+.footer-copyright a {
+    color: #ffe9dc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Effetto hover per il link Privacy Policy */
+.footer-copyright a:hover {
+    color: #ff7e5f;
+}
+
+/* Design per schermi piccoli */
+@media (max-width: 768px) {
+    .page-footer {
+        padding: 20px;
+    }
+
+    .page-footer h5 {
+        font-size: 1.5rem;
+    }
+
+    .foot-item a {
+        font-size: 1rem;
+    }
+}
+
+/* Contenitore principale degli eventi */
+.events {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente dal rosa al giallo-arancio */
+    padding: 50px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    color: white; /* Testo bianco per contrastare con il gradiente */
+}
+
+/* Titolo della sezione */
+.events h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* Descrizione sotto il titolo */
+.events p {
+    font-size: 1.2rem;
+    color: #f9f9f9;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Lista di eventi */
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Stile per ogni singolo evento */
+.event {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo bianco semi-trasparente */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    color: #333; /* Testo scuro per il contenuto */
+}
+
+/* Hover effect per gli eventi */
+.event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 1); /* Fondo più opaco al passaggio del mouse */
+}
+
+/* Titolo dell'evento */
+.event .title {
+    font-size: 1.8rem;
+    color: #ff7e5f; /* Colore in sintonia con il gradiente */
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+/* Dettagli dell'evento (Data e Luogo) */
+.event p {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+/* Aggiunta di un effetto di transizione sui dettagli */
+.event p strong {
+    color: #ff7e5f; /* Colore in sintonia con il titolo */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .events {
+        padding: 30px 15px;
+    }
+
+    .events h2 {
+        font-size: 2rem;
+    }
+
+    .events p {
+        font-size: 1rem;
+    }
+
+    .event-list {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .event .title {
+        font-size: 1.6rem;
+    }
+
+    .event p {
+        font-size: 1rem;
+    }
+}

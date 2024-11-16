@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <!-- Tag Meta Base -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- SEO Tags -->
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="Scopri e prenota eventi gastronomici nei ristoranti della tua zona. Con EventEat puoi esplorare serate a tema, degustazioni e corsi di cucina, il tutto a portata di click.">
+        <meta name="keywords" content="Eventi gastronomici, prenotazioni ristoranti, degustazioni, serate a tema, corsi di cucina, ristoranti, esperienze culinarie">
+        <meta name="author" content="La tua startup">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="EventEat - Scopri e prenota eventi gastronomici unici">
+        <meta property="og:description" content="La piattaforma per esplorare e prenotare eventi gastronomici speciali nella tua città. Scopri esperienze culinarie esclusive con EventEat.">
+        <meta property="og:image" content="url_immagine_logo_o_screenshot.jpg">
+        <meta property="og:url" content="https://127.0.0.1">
+        <meta property="og:type" content="website">
+
+        <!-- Twitter Cards -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="EventEat - Esperienze culinarie a portata di click">
+        <meta name="twitter:description" content="Con EventEat esplora eventi culinari unici, come degustazioni e serate a tema nei migliori ristoranti.">
+        <meta name="twitter:image" content="url_immagine_logo_o_screenshot.jpg">
+
+        <!-- Icona del sito -->
+        <link rel="icon" type="image/png" href="/static/images/icon.png">
+
+        <!-- CSS e Font -->
+        <link rel="stylesheet" href="/static/css/welcome.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+        {% block styles %}{% endblock %}
+    </head>
+    <body>
+        <!-- Header con logo e navigazione -->
+        <header class="introduction">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container">
+                    <a class="navbar-brand" href="/">EventEat</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-solid fa-compass"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            {% if current_user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{{ url_for('main.profile', id = current_user.id) }}"><i class="fa fa-solid fa-user-secret"></i> Profilo</a>
+                                </li>
+                            {% endif %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about"><i class="fa fa-solid fa-address-card"></i> Chi siamo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/location"><i class="fa fa-solid fa-location-crosshairs"></i> Dove ci troviamo</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/contact"><i class="fa fa-solid fa-phone-volume"></i> Contatti</a>
+                            </li>
+                            {% if not current_user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/signin"><i class="fa fa-solid fa-right-to-bracket"></i> Accedi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/signup"><i class="fa-solid fa-user-plus"></i> Registrati</a>
+                                </li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/event"><i class="fa fa-solid fa-calendar-day"></i> Eventi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/booking"><i class="fa fa-regular fa-calendar-days"></i> Prenotazioni</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/signout"><i class="fa fa-sign-out-alt"></i> Logout</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <section class="container other-intro">
+                <section class="intro-content">
+                    {% if current_user.is_authenticated %}
+                        {% if current_user.genre == "M" %}
+                            <h1 class="title">Benvenuto su EventEat, {{ current_user.name }}</h1>
+                        {% else %}
+                            <h1 class="title">Benvenuta su EventEat, {{ current_user.name }}</h1>
+                        {% endif %}
+                            <p class="sub-title">Scopri e prenota eventi gastronomici unici nei ristoranti della tua zona.</p>
+                            <p class="sub-sub">Serate a tema, degustazioni e corsi di cucina: un'esperienza culinaria per ogni palato.</p>
+                        {% else %}
+                        <h1 class="title">Benvenuto su EventEat</h1>
+                        <p class="sub-title">Scopri e prenota eventi gastronomici unici nei ristoranti della tua zona.</p>
+                        <p class="sub-sub">Serate a tema, degustazioni e corsi di cucina: un'esperienza culinaria per ogni palato.</p>
+                    {% endif %}
+                </section>
+            </section>
+
+        </header>
+
+        {% block content %}{% endblock %}
+        
+
+        <footer class="container page-footer">
+            <section class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">EventEat</h5>
+                    <p class="grey-text text-lighten-4">La tua piattaforma per eventi gastronomici unici. Scopri, prenota e partecipa alle esperienze culinarie più esclusive della tua zona!</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Collegamenti Veloci</h5>
+                    <ul class="foot-link">
+                        <li class="foot-item"><a class="grey-text text-lighten-3" href="/"><i class="fa fa-solid fa-house-chimney"></i> Home</a></li>
+                        <li class="foot-item"><a class="grey-text text-lighten-3" href="/about"><i class="fa fa-solid fa-address-card"></i> Chi Siamo</a></li>
+                        <li class="foot-item"><a class="grey-text text-lighten-3" href="/location"><i class="fa fa-solid fa-location-crosshairs"></i> Dove Ci Troviamo</a></li>
+                        <li class="foot-item"><a class="grey-text text-lighten-3" href="/contact"><i class="fa fa-solid fa-phone-volume"></i> Contatti</a></li>
+                    </ul>
+                </div>
+            </section>
+            <section class="container footer-copyright">
+                © 2024 EventEat. Tutti i diritti riservati.
+                <a class="grey-text text-lighten-4 right" href="/privacy-policy">Privacy Policy</a>
+            </section>
+        </footer>
+        
+        <!-- JavaScript (se necessario) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>

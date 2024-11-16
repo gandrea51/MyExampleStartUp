@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+    {% block title %}EventEat - Profilo{% endblock %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="/static/css/profile.css">
+    {% endblock %}
+
+    {% block content %}
+        <section class="container profile">
+            <section class="profile-header">
+                {% if user.genre == "M" %}
+                    <img src="/static/images/man.jpg" alt="User Profile Picture" class="profile-picture">
+                {% elif user.genre == "F" %}
+                    <img src="/static/images/woman.jpg" alt="User Profile Picture" class="profile-picture">
+                {% else %}
+                    <img src="/static/images/other.jpg" alt="User Profile Picture" class="profile-picture">
+                {% endif %}
+                <h2 class="user-name">{{ user.name }}</h2>
+            </section>
+        </section>    
+    
+        <section class="container profile-details">
+            <h3 class="u-title">Dettagli Utente</h3>
+            <ul class="u-info">
+                <li><strong>Nome:</strong> {{ user.name }}</li>
+                <li>
+                    <strong>Email:</strong> {{ user.email }}
+                    <a href="/email" class="edit-link">Modifica</a>
+                </li>
+                <li><strong>Genere:</strong> {{ user.genre }}</li>
+            </ul>
+            <a href="/password" class="btn-edit-password">Modifica Password</a>
+        </section>
+        
+        <section class="container event">
+    
+            <a href="" class="link-print">
+                <h3 class="link-title">Eventi Prenotati</h3>
+            </a>
+            
+            <ul class="event-list">
+                <!-- for booking in bookings -->
+                    <!--<li class="event-item">-->
+                        <!-- booking.event.titolo --> <!-- booking.event.event_data -->
+                        <!-- booking.event.place -->
+                        <!--<strong>Titolo</strong> - Data
+                        <span class="event-location">Place</span>
+                    </li>-->
+                <!-- else -->
+                    <!--<p class="no-events">Nessun evento prenotato.</p>-->
+                <!-- endfor -->
+                <li class="event-item">
+                    <strong>Titolo Evento 1</strong> - 2023-10-05
+                    <br>
+                    <span class="event-location">Roma, Italia</span>
+                </li>
+                <li class="event-item">
+                    <strong>Titolo Evento 2</strong> - 2023-11-12
+                    <span class="event-location">Milano, Italia</span>
+                </li>
+            </ul>
+        </section>
+    {% endblock %}

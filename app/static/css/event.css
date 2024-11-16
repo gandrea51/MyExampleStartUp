@@ -1,0 +1,228 @@
+/* Sezione contenitore eventi */
+.events-section {
+    background: linear-gradient(45deg, #f39c12, #f1c40f);
+    color: #ffffff;
+    padding: 60px 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    margin-top: 20px;
+    
+}
+
+/* Titolo della sezione */
+.due-title {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Paragrafo descrittivo */
+.dueparagraph {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: #f8f9fa;
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Aggiungi un effetto hover al titolo */
+.due-title:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+    transition: color 0.3s ease-in-out;
+}
+
+
+
+/* Ombra per dare effetto di profondità */
+.events-section .due-title,
+.events-section .dueparagraph {
+    position: relative;
+}
+
+
+/**/
+/* Container degli eventi */
+.e-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 50px 15px;
+    background: linear-gradient(135deg, #f5b7b1, #f1948a);
+    border-radius: 15px;
+}
+
+/* Carta dell'evento */
+.event-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect per la carta dell'evento */
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Immagine dell'evento */
+.event-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect per l'immagine */
+.event-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Sezione informazioni evento */
+.event-info {
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+    border-top: 1px solid #f1c40f;
+    color: #2c3e50;
+    border-radius: 0 0 15px 15px;
+    text-align: left;
+}
+
+/* Titolo dell'evento */
+.event-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+/* Data e luogo */
+.event-date,
+.event-location {
+    font-size: 1rem;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+
+/* Descrizione dell'evento */
+.event-description {
+    font-size: 1rem;
+    color: #34495e;
+    margin-bottom: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Bottone per scoprire di più */
+.btn-details {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #e74c3c;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect per il bottone */
+.btn-details:hover {
+    background: #c0392b;
+}
+
+/* Aggiunta di un effetto sui link */
+.btn-details:focus,
+.btn-details:hover {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.5);
+}
+/* Contenitore principale - link */
+.container.area-event {
+    display: block;
+    text-decoration: none;
+    color: inherit; /* Eredita il colore dal contenuto */
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ff7f50, #ff6347, #f5b342); /* Gradiente colorato */
+    padding: 40px;
+    margin: 30px auto;
+    width: 80%; /* Impostato per centrare il contenuto */
+    max-width: 800px; /* Limita la larghezza massima */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Ombra per creare profondità */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease-in-out; /* Animazioni */
+    text-align: center; /* Centra il testo */
+}
+
+/* Hover effect */
+.container.area-event:hover {
+    transform: translateY(-10px); /* Effetto di sollevamento */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Aumenta la profondità */
+    background: linear-gradient(135deg, #f5b342, #ff7f50, #ff6347); /* Cambia gradiente al passaggio del mouse */
+}
+
+/* Sezione interna */
+.events-section-due {
+    background: linear-gradient(-135deg, #f5b342, #ff7f50, #ff6347); /* Sfondo bianco semitrasparente */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 100%;
+    text-align: center; /* Allinea il testo al centro */
+}
+
+/* Titolo */
+.due-title-bis {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff; /* Colore bianco per il titolo */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect per il titolo */
+.container.area-event:hover .due-title-bis {
+    color: #ffd700; /* Cambia colore del titolo durante hover */
+}
+
+/* Descrizione */
+.dueparagraph-bis {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect per la descrizione */
+.container.area-event:hover .dueparagraph-bis {
+    color: #dfe6e9; /* Colore più chiaro al passaggio del mouse */
+}
+
+/* Effetto di transizione globale */
+.container.area-event:hover .dueparagraph-bis,
+.container.area-event:hover .due-title-bis {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Aggiunta di effetti per il focus e active */
+.container.area-event:focus,
+.container.area-event:active {
+    outline: none;
+}
+
+

@@ -1,0 +1,115 @@
+/* Stile della sezione Chi siamo */
+.about {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradiente rosa-arancio */
+    color: white;
+    padding: 60px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #f9f9f9;
+}
+
+/* Layout per il testo e l'immagine */
+.about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Stile per il testo */
+.about-text {
+    width: 60%;
+    padding-right: 30px;
+}
+
+/* Stile per l'immagine */
+.about-image {
+    width: 35%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Immagine responsiva */
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Responsive Design per schermi piccoli */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .about-image {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .about h2 {
+        font-size: 2rem;
+    }
+}
+/* Sezione Mission con Gradiente */
+.mission {
+    background: linear-gradient(-135deg, #ff7e5f, #feb47b); /* Gradiente da rosa a giallo-arancio */
+    padding: 40px;
+    margin-top: 50px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mission h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.mission p {
+    font-size: 1.2rem;
+    color: #f9f9f9;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design per schermi piccoli */
+@media (max-width: 768px) {
+    .mission h2 {
+        font-size: 2rem;
+    }
+
+    .mission p {
+        font-size: 1rem;
+    }
+}
+

@@ -1,0 +1,67 @@
+/* Stile generico per la pagina della privacy */
+.policy {
+    background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient azzurro-azzurro scuro */
+    color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+}
+
+.policy h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.policy p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.policy a {
+    color: #ffd700; /* Colore giallo per i link */
+    text-decoration: none;
+}
+
+.policy a:hover {
+    text-decoration: underline;
+}
+
+.policy-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.policy-section h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.policy-section p {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .policy {
+        padding: 20px;
+    }
+
+    .policy h1 {
+        font-size: 2rem;
+    }
+
+    .policy-section {
+        padding: 15px;
+    }
+
+    .policy-section h2 {
+        font-size: 1.6rem;
+    }
+}

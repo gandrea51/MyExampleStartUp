@@ -1,0 +1,239 @@
+/* Contenitore principale */
+.container.emanager {
+    background: linear-gradient(135deg, #ff7f50, #ff6347, #f5b342); /* Gradiente che sfuma tra colori caldi */
+    padding: 60px 20px; /* Spaziatura interna per un design arioso */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Ombra per creare profondità */
+    text-align: center; /* Centra tutto il testo */
+    max-width: 900px; /* Limita la larghezza per mantenere il design pulito */
+    margin: 50px auto; /* Centra il contenuto nel mezzo della pagina */
+    transition: all 0.3s ease; /* Transizioni per l'interazione */
+}
+
+/* Effetto al passaggio del mouse sul contenitore */
+.container.emanager:hover {
+    transform: translateY(-10px); /* Solleva leggermente il contenitore al passaggio del mouse */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2); /* Ombra più marcata */
+}
+
+/* Titolo principale */
+.container.emanager h1 {
+    font-size: 2.5rem; /* Grandezza del titolo */
+    font-weight: 700;
+    color: #ffffff; /* Colore del titolo in bianco */
+    text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+    letter-spacing: 3px; /* Distanza tra le lettere per un effetto più elegante */
+    margin-bottom: 30px; /* Spazio sotto al titolo */
+    transition: color 0.3s ease; /* Transizione per il cambiamento di colore al passaggio del mouse */
+}
+
+/* Effetto hover sul titolo */
+.container.emanager h1:hover {
+    color: #ffd700; /* Cambia il colore del titolo quando il mouse passa sopra */
+}
+
+.container.emanager h3 {
+    font-size: 2rem; /* Grandezza del titolo */
+    color: #ffffff; /* Colore del titolo in bianco */
+    text-transform: uppercase; /* Trasforma il testo in maiuscolo */
+    letter-spacing: 3px; /* Distanza tra le lettere per un effetto più elegante */
+    margin-bottom: 30px; /* Spazio sotto al titolo */
+    transition: color 0.3s ease; /* Transizione per il cambiamento di colore al passaggio del mouse */
+}
+
+/* Effetto hover sul titolo */
+.container.emanager h3:hover {
+    color: #34b145; /* Cambia il colore del titolo quando il mouse passa sopra */
+}
+
+/* Pulsante per aggiungere un nuovo evento */
+.btn-add-new {
+    display: inline-block;
+    background: linear-gradient(135deg, #007bff, #00d4ff); /* Gradiente dal blu al turchese */
+    color: #ffffff; /* Testo bianco */
+    padding: 15px 30px; /* Spaziatura interna per il bottone */
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 25px; /* Angoli arrotondati */
+    text-decoration: none; /* Rimuove il sottolineato */
+    transition: background 0.3s ease, transform 0.2s ease-in-out; /* Transizioni per colore e spostamento */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Leggera ombra sotto il bottone */
+    margin-top: 20px; /* Distanza tra il titolo e il bottone */
+}
+
+/* Effetto hover sul pulsante */
+.btn-add-new:hover {
+    background: linear-gradient(135deg, #00d4ff, #007bff); /* Inverte il gradiente al passaggio del mouse */
+    transform: translateY(-5px); /* Solleva il pulsante quando il mouse passa sopra */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Ombra più intensa */
+}
+
+/* Media Query per schermi piccoli */
+@media (max-width: 768px) {
+    .container.emanager {
+        padding: 40px 20px; /* Riduce la spaziatura interna sui dispositivi più piccoli */
+    }
+
+    .container.emanager h1 {
+        font-size: 2rem; /* Riduce la dimensione del titolo sui dispositivi piccoli */
+    }
+
+    .btn-add-new {
+        font-size: 1rem; /* Riduce la dimensione del testo del bottone */
+        padding: 12px 24px; /* Riduce la spaziatura interna */
+    }
+}
+
+.e-search {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #ff6b81, #f56f42); /* Gradiente colorato di sfondo */
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.e-search:hover {
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.e-search input[type="text"] {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background: #fff;
+    background-image: linear-gradient(135deg, #f0f0f0, #e7b8b8); /* Gradiente nel campo di ricerca */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.e-search input[type="text"]:focus {
+    background-color: #ff7b82; /* Colore di sfondo al focus */
+    box-shadow: 0 0 8px rgba(255, 123, 130, 0.6);
+    border: none;
+}
+
+.e-search input[type="text"]::placeholder {
+    color: #aaa;
+    font-style: italic;
+    transition: all 0.3s ease;
+}
+
+.e-search input[type="text"]:focus::placeholder {
+    font-style: normal;
+}
+
+.e-search input[type="text"]::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+.e-search input[type="text"]:focus::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.e-search .form-control {
+    border-radius: 25px;
+    font-size: 16px;
+}
+/* Stile per la sezione degli eventi */
+.container.e-list {
+    background: linear-gradient(135deg, #6a82fb, #fc5c7d); /* Gradienti colorati */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    color: #fff;
+}
+
+/* Titolo della sezione */
+.e-list h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Stile per la lista */
+#eList {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.e-item {
+    background-color: rgba(255, 255, 255, 0.15);
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: #fff;
+}
+
+.e-item:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* leggera luminosità quando hover */
+    transform: translateY(-5px); /* Leggera elevazione */
+}
+
+/* Aggiunta un'ombra alla lista degli eventi */
+.e-item strong {
+    font-size: 1.2rem;
+    color: #fffae5;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Dettagli dell'evento */
+.e-item p {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Azioni di modifica ed eliminazione */
+.e-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.e-actions .btn-edit, .e-actions .btn-drop {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.e-actions .btn-edit:hover, .e-actions .btn-drop:hover {
+    background: linear-gradient(45deg, #fe6f5e, #ff9e7d);
+    transform: scale(1.05);
+}
+
+.e-actions .btn-drop {
+    background: linear-gradient(45deg, #f8b400, #f97b5f);
+}
+
+.e-actions .btn-drop:hover {
+    background: linear-gradient(45deg, #ff6a00, #ff9a00);
+}
+
+/* Placeholder del campo di ricerca */
+#searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Effetto Hover su tutti gli eventi */
+.e-item:hover .e-actions .btn-edit, .e-item:hover .e-actions .btn-drop {
+    background: linear-gradient(45deg, #48c6ef, #6f86d6);
+}
+

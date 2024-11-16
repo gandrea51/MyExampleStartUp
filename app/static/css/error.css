@@ -1,0 +1,61 @@
+/**** Error Page Styling ****/
+.error-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background: linear-gradient(135deg, #dd8b1f, #e73827); /* Rosso/arancione per attirare l'attenzione */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.error-content {
+    max-width: 600px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6); /* Sfondo scuro semitrasparente per contrastare il gradiente */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.error-code {
+    font-size: 6em;
+    font-weight: 700;
+    margin: 0;
+    color: #ffd700; /* Giallo per evidenziare il codice */
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.error-message {
+    font-size: 2em;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #ffffff;
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.error-description {
+    font-size: 1.1em;
+    margin: 15px 0 30px;
+    color: #f5f5f5;
+    opacity: 0.85;
+}
+
+.error-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    background: linear-gradient(135deg, #1e90ff, #1c75bc); /* Gradiente blu per il bottone */
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.error-button:hover {
+    background: linear-gradient(135deg, #1c75bc, #1e90ff); /* Inversione del gradiente al passaggio del mouse */
+    transform: scale(1.05);
+}

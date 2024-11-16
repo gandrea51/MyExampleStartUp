@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+    {% block title %}EventEat - Eventi{% endblock %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="/static/css/event.css">
+    {% endblock %}
+
+    {% block content %}
+
+        <section class="container events-section">
+            <h2 class="due-title">Eventi Gastronomici Disponibili</h2>
+            <p class="dueparagraph">Scopri tutti gli eventi unici in programma nella tua zona e prenota subito il tuo posto!</p>
+        </section>
+
+        {% if current_user.role == "M" %}
+            <a href="/emanager" class="container area-event">
+                <section class="container events-section-due">
+                    <h2 class="due-title-bis">Area Manager</h2>
+                    <p class="dueparagraph-bis">Entra per gestire tutti gli eventi!</p>
+                </section>
+            </a>
+        {% endif %}
+
+        <section class="container e-list">
+            {% for event in events %}
+                <div class="event-card" data-bs-toggle="modal" data-bs-target="#eventModal{{ loop.index }}">
+                    <div class="event-image">
+                        {% if event.id % 2 == 0 %}
+                            <img src="/static/images/event1.jpg" alt="{{ event.title }}">
+                        {% else %}
+                            <img src="/static/images/event2.jpg" alt="{{ event.title }}">
+                        {% endif %}
+                    </div>
+                    <div class="event-info">
+                        <h3 class="event-title">{{ event.title }}</h3>
+                        <p class="event-date">Data: {{ event.event_data }}</p>
+                        <p class="event-location">Luogo: {{ event.place }}</p>
+                        <p class="event-description">{{ event.description | truncate(150) }}</p>
+                    </div>
+                </div>
+        
+                <div class="modal fade" id="eventModal{{ loop.index }}" tabindex="-1" aria-labelledby="eventModalLabel{{ loop.index }}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="eventModalLabel{{ loop.index }}">{{ event.title }}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Event details go here -->
+                                <p>{{ event.description }}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn-close-modal" data-bs-dismiss="modal">Chiudi</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            {% endfor %}
+        </section>
+
+        <script>
+            // Rimuovi la classe modal-open dal body per abilitare lo scroll
+            $('#eventModal').on('shown.bs.modal', function () {
+                $('body').css('overflow', 'auto'); // Consenti lo scroll
+            });
+
+            // Quando il modal è chiuso, puoi ripristinare il comportamento predefinito (scroll disabilitato)
+            $('#eventModal').on('hidden.bs.modal', function () {
+                $('body').css('overflow', 'hidden'); // Disabilita lo scroll
+            });
+
+        </script>
+
+
+    {% endblock %}

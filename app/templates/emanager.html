@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+    {% block title %}EventEat - Eventi{% endblock %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="/static/css/emanager.css">
+    {% endblock %}
+
+    {% block content %}
+        <section class="container emanager text-center">
+            
+            <h1>Gestione degli eventi</h1>
+            <h3>Gestisci facilmente i tuoi eventi gastronomici con pochi cli</h3>
+            <a href="/event/create" class="btn-add-new">Inserisci nuovo evento</a>
+        
+        </section>
+
+        <section class="container e-search">
+            <input type="text" id="searchInput" class="form-control" placeholder="Cerca un evento...">
+        </section>
+        
+        <section class="container e-list">
+            <h4 class="text-center">Tutti gli Eventi</h4>
+            <ul id="eList" class="list-group">
+                {% for event in events %}
+                <li class="list-group-item e-item">
+                    <strong>{{ event.title }}</strong>  {{ event.place }}
+                    <div class="e-actions">
+                        <a href="{{ url_for('main.eedit', id = event.id) }}" class="btn-edit">Modifica</a>
+                        <form action="{{ url_for('main.edrop', id = event.id) }}" method="post" style="display:inline;">
+                            <button type="submit" class="btn-drop" onclick="return confirm('Sei sicuro di voler eliminare questo evento?');">Elimina</button>
+                        </form>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Prendi l'input di ricerca e la lista di eventi
+                const searchInput = document.getElementById('searchInput');
+                const eList = document.getElementById('eList');
+                const eItems = eList.getElementsByClassName('e-item');
+
+                // Funzione per filtrare gli eventi
+                searchInput.addEventListener('input', function() {
+                    const searchText = searchInput.value.toLowerCase();
+
+                    // Cicla su ogni elemento della lista e mostra solo quelli che corrispondono alla ricerca
+                    for (let i = 0; i < eItems.length; i++) {
+                        const eventTitle = eItems[i].querySelector('strong').textContent.toLowerCase();
+                        const eventPlace = eItems[i].textContent.toLowerCase();
+
+                        // Se il titolo o il luogo contengono il testo della ricerca, mostrali
+                        if (eventTitle.includes(searchText) || eventPlace.includes(searchText)) {
+                            eItems[i].style.display = '';
+                        } else {
+                            eItems[i].style.display = 'none';
+                        }
+                    }
+                });
+            });
+
+        </script>
+
+    {% endblock %}

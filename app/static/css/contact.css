@@ -1,0 +1,101 @@
+/* Stile generale per la sezione di contatto */
+.contact {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradienti accattivanti */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px; /* Aggiungi spazio tra le due sezioni */
+}
+
+/* Stile per la sezione delle informazioni di contatto */
+.contact-info {
+    flex: 1;  /* Le due sezioni occupano la stessa larghezza */
+    background: linear-gradient(to bottom, #6a11cb, #2575fc); /* Gradient verticale */
+    padding: 30px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.contact-info h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Stile per la sezione del modulo di contatto */
+.contact-form {
+    flex: 1; /* Le due sezioni occupano la stessa larghezza */
+    background: linear-gradient(to bottom, #ff9a8b, #ff6a88); /* Gradient verticale */
+    padding: 30px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.contact-form h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.contact-form button.submit-btn {
+    background-color: #ffd700;
+    color: #333;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button.submit-btn:hover {
+    background-color: #ff9a8b;
+}
+
+/* Responsive Design: disporre le sezioni verticalmente sui dispositivi mobili */
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column;
+    }
+    
+    .contact-info, .contact-form {
+        flex: none;
+        width: 100%;
+        margin-bottom: 30px; /* Aggiungi spazio tra le sezioni quando sono in colonna */
+    }
+}

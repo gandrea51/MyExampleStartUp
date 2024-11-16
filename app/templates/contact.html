@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+    {% block title %}EventEat - Contatti{% endblock %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="/static/css/contact.css">
+    {% endblock %}
+
+    {% block content %}
+        <br><br>
+        <section class="container contact">
+            <h2>Contattaci</h2>
+            
+            <div class="contact-info">
+                <h3>Informazioni di Contatto</h3>
+                <p><strong>Email:</strong> <a href="mailto:info@eventeat.com">info@eventeat.com</a></p>
+                <p><strong>Telefono:</strong> <a href="tel:+39123456789">+39 123 456 789</a></p>
+                <p><strong>Indirizzo:</strong> Via Giusti, 4, 44124 Ferrara FE</p>
+                <p><strong>Orari di Apertura:</strong><br>
+                    Lunedì - Venerdì: 10:00 - 18:00<br>
+                    Sabato - Domenica: 11:00 - 17:00
+                </p>
+            </div>
+
+            <div class="contact-form">
+                <h3>Invia un Messaggio</h3>
+                <form action="/submit-contact" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Messaggio:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Invia</button>
+                </form>
+            </div>
+
+        </section>
+    {% endblock %}
