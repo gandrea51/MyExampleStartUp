@@ -1,4 +1,4 @@
-# MyExampleStartUp: EventEat
+# Project1: EventEat
 
 EventEat è una piattaforma web per la gestione e la visualizzazione di eventi. Consente agli utenti di esplorare, prenotare e gestire eventi con un'interfaccia moderna e accattivante.
 
